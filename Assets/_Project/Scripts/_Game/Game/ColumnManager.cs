@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 
@@ -178,7 +179,9 @@ using UnityEngine;
 		public void GoToTarget(Hex hex, int x, int y)
 		{
 			hex.transform.parent = _columns[x].GetRow(y).transform;
-			hex.transform.localPosition = Vector3.zero;
+			
+			hex.transform.DOLocalMove(Vector3.zero, .25f);
+		
 		}
 
 		Hex GetHex(Vector2Int index)
