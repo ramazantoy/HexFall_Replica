@@ -356,6 +356,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4164121831277150796, guid: bec50e4194d874b179eff5b46629fcc0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.056778
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164121831277150796, guid: bec50e4194d874b179eff5b46629fcc0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1449391
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164121831277150796, guid: bec50e4194d874b179eff5b46629fcc0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4377
+      objectReference: {fileID: 0}
+    - target: {fileID: 4164121831277150796, guid: bec50e4194d874b179eff5b46629fcc0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.1016
+      objectReference: {fileID: 0}
     - target: {fileID: 4658043263730009692, guid: bec50e4194d874b179eff5b46629fcc0, type: 3}
       propertyPath: m_Name
       value: HexFall

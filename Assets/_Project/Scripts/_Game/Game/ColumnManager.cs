@@ -3,9 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
-	public class ColumnManager : MonoBehaviour
+public class ColumnManager : MonoBehaviour
 	{
 		public static ColumnManager Instance;
 
@@ -96,64 +97,275 @@ using UnityEngine;
 
 		void SelectPoint(int x, int y)
 		{
-			
+			Debug.LogError("x :"+x+" y : "+ y);
 			_columns[x].Select(y);
 			_selectedIndexes.Add(new Vector2Int(x, y));
 
-			if (x == _columns.Count - 1)
+			if (x == 0)
 			{
-				if (x % 2 == 0 && y == _objectPerColumn -1)
+				if (y == 0)
 				{
-					_columns[x - 1].Select(y - 1);
-					_selectedIndexes.Add(new Vector2Int(x - 1, y - 1));
+					
+					_columns[x].Select(y+1);
+					_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+					_columns[x-1].Select(y);
+					_selectedIndexes.Add(new Vector2Int(x-1, y));
 				}
-				else
+				else if (y == _objectPerColumn - 1)
 				{
-					if (x % 2 == 1 && y == 0)
+
+					int random = UnityEngine.Random.Range(0, 2);
+
+					if (random == 0)
 					{
-						_columns[x - 1].Select(y + 1);
-						_selectedIndexes.Add(new Vector2Int(x - 1, y + 1));
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x+1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x+1, y-1));
 					}
 					else
 					{
-						_columns[x - 1].Select(y);
-						_selectedIndexes.Add(new Vector2Int(x - 1, y));
+						_columns[x+1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x+1, y-1));
+					
+						_columns[x+1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x+1, y));
+					}
+		
+				}
+				else
+				{
+					int random = UnityEngine.Random.Range(0, 2);
+
+					if (random == 0)
+					{
+						_columns[x].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+						_columns[x+1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x+1, y));
+					}
+					else
+					{
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x+1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x+1, y-1));
+					}
+				}
+			}
+			else if (x == _columns.Count - 1)
+			{
+				if (y == 0)
+				{
+					_columns[x-1].Select(y);
+					_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+					_columns[x].Select(y+1);
+					_selectedIndexes.Add(new Vector2Int(x, y+1));
+				}
+				
+				else if (y == _objectPerColumn - 1)
+				{
+
+					int random = UnityEngine.Random.Range(0, 2);
+
+					if (random == 0)
+					{
+						_columns[x-1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y-1));
+					
+						_columns[x-1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x-1, y));
+					}
+					else
+					{
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x-1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y-1));
+					}
+		
+				}
+				else
+				{
+					int random = UnityEngine.Random.Range(0, 2);
+
+					if (random == 0)
+					{
+						_columns[x-1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+						_columns[x-1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y-1));
+					}
+					else
+					{
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x-1].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y-1));
 					}
 				}
 			}
 			else
 			{
-				if (x % 2 == 0 && y == _objectPerColumn - 1)
+
+				if (y == 0)
 				{
-					_columns[x + 1].Select(y - 1);
-					_selectedIndexes.Add(new Vector2Int(x + 1, y - 1));
-				}
-				else
-				{
-					if (x % 2 == 1 && y == 0)
+					if (x % 2 == 0)
 					{
-						_columns[x + 1].Select(y + 1);
-						_selectedIndexes.Add(new Vector2Int(x + 1, y + 1));
+						int random = UnityEngine.Random.Range(0, 4);
+
+						if (random == 0)
+						{
+							Debug.LogError(0);
+							_columns[x-1].Select(y);
+							_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+							_columns[x-1].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x-1, y+1));
+						}
+						else if(random==1)
+						{		Debug.LogError(1);
+							_columns[x].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+							_columns[x-1].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x-1, y+1));
+						}
+						else if(random==2)
+						{
+							Debug.LogError(2);
+							_columns[x].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+							_columns[x+1].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x+1, y+1));
+						}
+						else if(random==3)
+						{
+							Debug.LogError(3);
+							_columns[x+1].Select(y);
+							_selectedIndexes.Add(new Vector2Int(x+1, y));
+					
+							_columns[x+1].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x+1, y+1));
+						}
 					}
 					else
 					{
-						_columns[x + 1].Select(y);
-						_selectedIndexes.Add(new Vector2Int(x + 1, y));
+						int random = UnityEngine.Random.Range(0, 4);
+						if (random == 0)
+						{
+							Debug.LogError(0);
+							_columns[x-1].Select(y);
+							_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+							_columns[x].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x, y+1));
+						}
+						else
+						{
+							Debug.LogError(1);
+							_columns[x+1].Select(y);
+							_selectedIndexes.Add(new Vector2Int(x+1, y));
+					
+							_columns[x].Select(y+1);
+							_selectedIndexes.Add(new Vector2Int(x, y+1));
+						}
 					}
+			
 				}
+				else if (y == _objectPerColumn - 1)
+				{
+					int random = UnityEngine.Random.Range(0, 2);
+
+					if (random == 0)
+					{
+						_columns[x-1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					}
+					else if (random == 1)
+					{
+						_columns[x+1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x+1, y));
+					
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					}
+		
+				}
+
+				else
+				{
+					int random = UnityEngine.Random.Range(0, 6);
+
+					Debug.LogError(random);
+					if (random == 0)
+					{
+		
+						_columns[x-1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x-1, y));
+					
+						_columns[x-1].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y+1));
+					}
+					else if (random == 1)
+					{
+		
+						_columns[x+1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x+1, y));
+					
+						_columns[x+1].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x+1, y+1));
+					}
+					else if (random == 2)
+					{
+		
+						_columns[x].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+						_columns[x-1].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x-1, y+1));
+					}
+					else if (random == 3)
+					{
+						_columns[x].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x, y+1));
+					
+						_columns[x+1].Select(y+1);
+						_selectedIndexes.Add(new Vector2Int(x+1, y+1));
+					}
+					else if (random == 4)
+					{
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x+1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x+1, y));
+					}
+					else if (random == 5)
+					{
+						_columns[x].Select(y-1);
+						_selectedIndexes.Add(new Vector2Int(x, y-1));
+					
+						_columns[x-1].Select(y);
+						_selectedIndexes.Add(new Vector2Int(x-1, y));
+					}
+					
+				}
+	
 			}
-			
-			if (y == 0 || x % 2 == 0)
-			{
-				_columns[x].Select(y + 1);
-				_selectedIndexes.Add(new Vector2Int(x , y + 1));
-			}
-			else
-			{
-				_columns[x].Select(y - 1);
-				_selectedIndexes.Add(new Vector2Int(x , y - 1));
-			}
-			
+
 		}
 
 		void CleanSelections()
