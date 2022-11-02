@@ -61,7 +61,6 @@ public class ColumnManager : MonoBehaviour
 			if (type == TouchType.PressDown)
 			{
 				CleanSelections();
-
 				RaycastHit raycastHit = UserInput.instance.Raycast(_camera, _groundMask);
 				
 				if(raycastHit.collider==null) return;
@@ -71,6 +70,12 @@ public class ColumnManager : MonoBehaviour
 				
 				FindSelectedIndexes();
 			}
+
+			if (type == TouchType.PressUp)
+			{
+				LookMatches();
+			}
+			
 		}
 
 		void FindSelectedIndexes()
@@ -231,5 +236,15 @@ public class ColumnManager : MonoBehaviour
 		{
 			return _columns[index.x].GetRow(index.y).Hex;
 		}
+		private void LookMatches()
+		{
+			CleanSelections();
+			foreach (Column column in _columns)
+			{
+				column.LookMatches();
+			}
+		}
+		
+		
 	}
 

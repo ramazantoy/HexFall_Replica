@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4164121831277150792}
   m_LocalRotation: {x: -0.7071058, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 3.3494, y: 4.1124, z: 0}
-  m_LocalScale: {x: 0.82798177, y: 0.5, z: 1.020821}
+  m_LocalPosition: {x: 3.4377, y: 4.1016, z: 0}
+  m_LocalScale: {x: 1.056778, y: 0.5, z: 1.1449391}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7319706433594079891}
@@ -461,6 +461,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4164121831820007108}
     m_Modifications:
+    - target: {fileID: 5082063482274803178, guid: 7efd9a38296134fc59cb6e3beb69fa75, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082063482274803178, guid: 7efd9a38296134fc59cb6e3beb69fa75, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082063482274803178, guid: 7efd9a38296134fc59cb6e3beb69fa75, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5082063482274803178, guid: 7efd9a38296134fc59cb6e3beb69fa75, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 5993935038529177552, guid: 7efd9a38296134fc59cb6e3beb69fa75, type: 3}
       propertyPath: m_RootOrder
       value: 6

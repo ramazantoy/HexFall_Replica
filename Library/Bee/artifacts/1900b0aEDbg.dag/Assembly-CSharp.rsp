@@ -362,6 +362,7 @@
 "Assets/_Project/Scripts/_Game/Game/Column.cs"
 "Assets/_Project/Scripts/_Game/Game/ColumnManager.cs"
 "Assets/_Project/Scripts/_Game/Game/Hex.cs"
+"Assets/_Project/Scripts/_Game/Game/HexPool.cs"
 "Assets/_Project/Scripts/_Game/Game/Row.cs"
 "Assets/_Project/Scripts/_Game/Player/UserInput.cs"
 -langversion:9.0

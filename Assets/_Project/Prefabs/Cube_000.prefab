@@ -147,7 +147,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 1
   autoRandomSeed: 1
   startDelay:
@@ -4828,7 +4828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8916410928406611332
 Transform:
   m_ObjectHideFlags: 0
@@ -4921,4 +4921,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e8b1f425deb44cdb661024ae3565f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: 2
+  _properties:
+    HexColor: -1
+    HexParticle: {fileID: 4343282617477543124}
+    HexMaterials:
+    - {fileID: 2100000, guid: a575a0d4e752c4a83bf2df84277f6c70, type: 2}
+    - {fileID: 2100000, guid: 2dccf93b29ad2418f8abdcba4cd001ba, type: 2}
+    - {fileID: 2100000, guid: 3e6357b1f91d5413588ff2ae4f1b9fde, type: 2}
+    - {fileID: 2100000, guid: 318de3656e88042ccbc688cad1796287, type: 2}

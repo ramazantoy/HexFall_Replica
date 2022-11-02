@@ -47,6 +47,7 @@
      <Compile Include="Assets\_Project\Scripts\_Game\Game\Column.cs" />
      <Compile Include="Assets\_Project\Scripts\_Game\Game\Row.cs" />
      <Compile Include="Assets\_Project\Scripts\_Game\Game\Hex.cs" />
+     <Compile Include="Assets\_Project\Scripts\_Game\Game\HexPool.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.12f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
