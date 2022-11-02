@@ -5,7 +5,7 @@ I tried cloning the hexfall game in my spare time.
 
 R rotate to select items
 
-Touch Up Check Macthes
+Touch Up Check Matches
 
 Touch Down Select Items
 
